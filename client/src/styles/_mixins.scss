@@ -1,0 +1,66 @@
+@use './variables' as *;
+
+@mixin glass-panel {
+  background: $bg-card-glass;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: $border-card;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #262633;
+    border-radius: 4px;
+    &:hover {
+      background: #38384D;
+    }
+  }
+}
+
+@mixin card-interactive {
+  background: $bg-card;
+  border: $border-card;
+  border-radius: $radius-md;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+
+  &:hover {
+    border-color: #2E2E3C;
+    background: $bg-card-hover;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  }
+}
+
+@mixin button-reset {
+  border: none;
+  background: none;
+  font-family: inherit;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+}
